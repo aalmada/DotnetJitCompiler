@@ -20,7 +20,7 @@ jobs:
 
       - name: Build
         working-directory: ./slidev
-        run: yarn build --base MasteringEnumeration
+        run: yarn build --base DotnetJitCompiler
 
       - name: Deploy pages
         uses: crazy-max/ghaction-github-pages@v3
