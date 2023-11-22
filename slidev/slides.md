@@ -10,8 +10,9 @@ background: "https://source.unsplash.com/1600x900/?nature,water"
 layout: intro
 ---
 
-Antão Almada<br>
+**Antão Almada**<br>
 Principal Engineer<br>
+Tech R&D<br>
 Farfetch
 
 ---
@@ -62,24 +63,30 @@ Farfetch
   - Opportunities for optimization are limited by the time-intensive nature of the process.
 
 ---
+layout: two-cols-header
+---
 
 # .NET Compilation Overview
 
-## Compiler 
+::left::
+### Compiler 
+
+- **Code Translation:**
+  - Translates high-level programming code into Intermediate Language (IL).
+  - Supports languages: C#, F#, VB.NET, NetCOBOL for .NET, ...
 
 - **Build-time Execution:**
   - Operates on the build machine before deployment.
 
-- **Code Translation:**
-  - Translates high-level programming code into Intermediate Language (IL).
-
-## JIT (Just-In-Time) Compiler
-
-- **Runtime Operation:**
-  - Operates on the execution machine during runtime.
+::right::
+### JIT (Just-In-Time) Compiler
 
 - **Dynamic Translation:**
   - Translates IL into machine code on-the-fly.
+  - x86, x64, arm, arm64, ...
+
+- **Runtime Operation:**
+  - Operates on the execution machine during runtime.
 
 ---
 
@@ -144,7 +151,7 @@ ret
 
 ---
 
-# JIT Tiered Compilation
+# JIT Compiler: Tiered Compilation
 
 - **Multiple Compilation Rounds:**
   - Employs the capability to compile the same code multiple times.
@@ -160,7 +167,7 @@ ret
 
 ---
 
-# JIT Tiered Compilation: On-Stack Replacement (OSR)
+# JIT Compiler: On-Stack Replacement (OSR)
 
 - **Loop Optimization Consideration:**
   - Methods called infrequently but executing repetitive work in a loop are identified.
@@ -174,7 +181,7 @@ ret
 
 ---
 
-# JIT Tiered Compilation: Profile-Guided Optimization (PGO)
+# JIT Compiler: Profile-Guided Optimization (PGO)
 
 - 
 
@@ -185,17 +192,43 @@ src: ./pages/Optimizations.md
 src: ./pages/BoundsChecking.md
 --- 
 ---
+src: ./pages/Simd.md
+--- 
+---
 
-# The End!
+# Conclusions
+
+- **Versatile Compilation:**
+  - .NET offers diverse compilation approaches to meet varying application needs.
+
+- **Adaptive Performance:**
+  - The JIT Compiler balances startup and throughput, adapting to usage scenarios.
+
+- **Tiered Compilation Dynamics:**
+  - JIT tiered compilation, including OSR, optimizes code based on runtime behavior.
+
+- **Efficient SIMD Integration:**
+  - Single Instruction, Multiple Data (SIMD) enhances parallel execution for data-intensive tasks.
+
+- **Continuous Evolution:**
+  - .NET's compilation techniques evolve for optimized performance on modern hardware.
+
+- **Tailored Efficiency:**
+  - .NET's compilation tools provide tailored solutions for efficiency and adaptability.
+
+---
 
 ## References
 
-- https://managed670.rssing.com/chan-5590147/all_p1.html
-- https://mattwarren.org/2017/12/15/How-does-.NET-JIT-a-method-and-Tiered-Compilation/
-- https://devblogs.microsoft.com/dotnet/the-next-generation-of-net/
 - https://devblogs.microsoft.com/dotnet/ryujit-the-next-generation-jit-compiler-for-net/
 - https://devblogs.microsoft.com/dotnet/the-ryujit-transition-is-complete/
 - https://devblogs.microsoft.com/dotnet/performance_improvements_in_net_7/#jit
 - https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-8/
 
 ---
+layout: center
+---
+
+![aalmada.github.io/DotnetJitCompiler/](/images/qrcode.png)
+
+aalmada.github.io/DotnetJitCompiler/
