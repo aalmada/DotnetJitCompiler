@@ -79,5 +79,3 @@ Vector2`1[[System.Int32, System.Private.CoreLib]].op_Addition(Vector2`1<Int32> B
     L0016: add rsp, 8
     L001a: ret
 ```
-
----

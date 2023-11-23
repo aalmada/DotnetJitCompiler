@@ -151,50 +151,84 @@ ret
 
 ---
 
+# JIT Compiler: Early Versions
+
+- **Initial Compilation Approach:**
+  - In the early versions, a .NET method was compiled solely upon its first invocation.
+
+- **Optimization Challenges:**
+  - Optimization, a resource-intensive process, presented challenges due to its cost.
+
+- **Limited Method Invocations:**
+  - The majority of methods in an application were invoked only once or a few times.
+
+---
+
 # JIT Compiler: Tiered Compilation
 
-- **Multiple Compilation Rounds:**
-  - Employs the capability to compile the same code multiple times.
+- **Introduction:**
+  - Debuted in .NET Core 3.0.
 
-- **Initial Quick Compilation:**
-  - First compilation prioritizes speed over extensive optimizations, producing fast but relatively unoptimized assembly code.
+- **Adaptive Compilation:**
+  - Utilizes multiple compilation rounds for the same code.
+
+- **Swift Initial Compilation (Tier-0):**
+  - Prioritizes speed in the first compilation, generating fast yet relatively unoptimized assembly code.
 
 - **Instrumentation Integration:**
-  - Introduces instrumentation into the assembly to monitor method call frequencies.
+  - Includes instrumentation in the assembly to monitor method call frequencies.
 
-- **Selective Recompilation:**
-  - Recompiles methods called frequently, applying comprehensive optimizations to enhance performance.
+- **Strategic Recompilation (Tier-1):**
+  - Recompiles frequently called methods, applying comprehensive optimizations for superior performance.
+
+- **Loop Optimization Emphasis:**
+  - Methods executing in loops directly enter tier-1 due to their potential for substantial work.
 
 ---
 
 # JIT Compiler: On-Stack Replacement (OSR)
 
-- **Loop Optimization Consideration:**
-  - Methods called infrequently but executing repetitive work in a loop are identified.
+- **Introduction:**
+  - Debuted in .NET 7.
+
+- **Loop Optimization Focus:**
+  - Identifies methods executing repetitive work in a loop but called infrequently.
 
 - **Recompilation Trigger:**
-  - After a certain number of loop iterations, the method undergoes recompilation.
+  - After a specific number of loop iterations, the method undergoes recompilation.
 
-- **Dynamic Runtime Replacement:**
-  - Utilizes On-Stack Replacement (OSR) to seamlessly replace the method at runtime for improved efficiency.
-
+- **Efficient Runtime Replacement:**
+  - Employs On-Stack Replacement (OSR) for dynamic runtime replacement, enhancing overall efficiency.
 
 ---
 
-# JIT Compiler: Profile-Guided Optimization (PGO)
+# JIT Compiler: Dynamic Profile-Guided Optimization (Dynamic PGO)
 
-- 
+- **Introduction:**
+  - Introduced in .NET 6, with default activation beginning in .NET 8.
+
+- **Cost of Instrumentation:**
+  - Instrumentation incurs a cost, leading to the introduction of a new uninstrumented tier.
+
+- **Instrumentation Activation:**
+  - After a specific number of calls, the method undergoes instrumentation.
+
+- **Optimization Trigger:**
+  - Once instrumented, the method is optimized based on data collected from prior calls after a specific number of subsequent calls.
 
 ---
 src: ./pages/Optimizations.md
 ---
 ---
 src: ./pages/BoundsChecking.md
---- 
 ---
+--- 
 src: ./pages/Simd.md
---- 
 ---
+--- 
+src: ./pages/Linq.md
+---
+--- 
 
 # Conclusions
 

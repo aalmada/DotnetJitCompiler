@@ -369,5 +369,3 @@ Program.<<Main>$>g__Copy|0_0[[System.Int32, System.Private.CoreLib]](System.Read
 |    LocalVariable |    1000 |     321.146 ns |     0.3797 ns |     0.3552 ns | 1.36x faster |   0.00x |
 |          ForEach |    1000 |     321.288 ns |     0.6956 ns |     0.6166 ns | 1.36x faster |   0.00x |
 |         Unrolled |    1000 |     296.343 ns |     0.1148 ns |     0.0896 ns | 1.48x faster |   0.00x |
-
----
