@@ -53,11 +53,11 @@ Farfetch
 - **Runtime Operation:**
   - Executes on the execution machine during runtime.
 
-- **In-Depth Machine Insight:**
-  - Possesses detailed knowledge of the machine architecture.
-
 - **Startup Consideration:**
   - Significantly increases startup time due to interpretation.
+
+- **In-Depth Machine Insight:**
+  - Possesses detailed knowledge of the machine architecture.
 
 - **Time Constraints on Optimization:**
   - Opportunities for optimization are limited by the time-intensive nature of the process.
@@ -66,14 +66,16 @@ Farfetch
 layout: two-cols-header
 ---
 
-# .NET Compilation Overview
+# .NET Common Language Infrastructure (CLI)
+
+Describes executable code and a runtime environment that allows multiple high-level languages to be used on different computer platforms without being rewritten for specific architectures.
 
 ::left::
 ### Compiler 
 
 - **Code Translation:**
   - Translates high-level programming code into Intermediate Language (IL).
-  - Supports languages: C#, F#, VB.NET, NetCOBOL for .NET, ...
+  - Existing compilers: C#, F#, VB.NET, [more](https://en.wikipedia.org/wiki/List_of_CLI_languages)
 
 - **Build-time Execution:**
   - Operates on the build machine before deployment.
